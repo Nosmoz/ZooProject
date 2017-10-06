@@ -2,17 +2,17 @@ package ProjetZoo;
 
 public class Animals {
     private String name;
-    private String sexe;
+    private int sexe;
     private double weight;
-    private double age;
+    private int age;
     private double hungry;
+    private boolean is_Mammal;
     private boolean is_Sleep;
-    private String life;
-    private String test;
+    private boolean is_Sick;
 
     public void eat()
     {
-        if (hungry > 0.5)
+        if (hungry > 0.5 || is_Sleep == true)
         {
             System.out.println("he's not hungry");
         }
@@ -20,10 +20,6 @@ public class Animals {
         {
             System.out.println("He can eat");
             hungry = hungry + 0.5 ;
-        }
-        else
-        {
-            System.out.println("He can't eat because he sleep");
         }
     }
 
@@ -35,7 +31,11 @@ public class Animals {
 
     public void cure()
     {
-
+        if (is_Sick == true)
+        {
+            is_Sick = false;
+            System.out.print("He been cured");
+        }
     }
 
     public void stase()
@@ -48,7 +48,7 @@ public class Animals {
         else
         {
             is_Sleep = false;
-            System.out.print("He stop sleeping");
+            System.out.println("He stop sleeping");
         }
     }
 
@@ -59,6 +59,18 @@ public class Animals {
 
     public void birth()
     {
+        if(is_Mammal == true && sexe == 2)
+        {
+            System.out.println(" Naissance de type normal");
+        }
+        else if (sexe == 2)
+        {
+            System.out.println("Naissance par oeufs");
+        }
+        else
+        {
+            System.out.println("Impossible car mâle");
+        }
 
     }
 
