@@ -8,6 +8,7 @@ public class Animals {
     private double hungry;
     private boolean is_Sleep;
     private String life;
+    private String test;
 
     public void eat()
     {
