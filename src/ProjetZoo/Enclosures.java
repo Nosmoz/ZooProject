@@ -1,14 +1,25 @@
 package ProjetZoo;
 
+
 public class Enclosures {
     
     private String name;
     private double area;
-    private int maxAnimals;
+    private final int maxAnimals;
     private int nbrAnimals;
     private Animals animal;
     private int cleanliness;
+    private Animals[] arrayAnimals;
     
+    public Enclosures(String name, double area, int maxAnimals) {
+        
+        this.name = name;
+        this.area = area;
+        this.maxAnimals = maxAnimals;
+        this.nbrAnimals = 0;
+        this.cleanliness = 1;
+	this.arrayAnimals = new Animals[maxAnimals];
+    }
     
     public void addAnimal()
     {
@@ -37,6 +48,11 @@ public class Enclosures {
         return false;
     }
 
+    public String toString() {
+	return "";
+    }
+        
+    //getter des attribut de la classe
     public String getName() {
         return name;
     }
@@ -61,6 +77,7 @@ public class Enclosures {
         return cleanliness;
     }
 
+    //setter des attribut de la classe
     public void setName(String name) {
         this.name = name;
     }
