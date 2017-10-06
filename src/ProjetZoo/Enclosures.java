@@ -2,5 +2,5 @@ package ProjetZoo;
 
 public class Enclosures {
     
-    String test;
+    String test1;
 }
