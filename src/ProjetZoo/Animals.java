@@ -1,6 +1,6 @@
 package ProjetZoo;
 
-public class Animaux {
+public class Animals {
     private String name;
     private String sexe;
     private double weight;
