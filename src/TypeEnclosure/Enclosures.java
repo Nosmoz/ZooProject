@@ -1,4 +1,6 @@
-package ProjetZoo;
+package TypeEnclosure;
+
+import TypeAnimals.Animals;
 
 
 public class Enclosures {
@@ -10,6 +12,7 @@ public class Enclosures {
     private Animals animal;
     private int cleanliness;
     private Animals[] arrayAnimals;
+    private int counter;
     
     public Enclosures(String name, double area, int maxAnimals) {
         
@@ -19,37 +22,41 @@ public class Enclosures {
         this.nbrAnimals = 0;
         this.cleanliness = 1;
 	this.arrayAnimals = new Animals[maxAnimals];
+        //this.counter = 0;
     }
     
-    public void addAnimal()
+    public void addAnimal(Animals animal)
     {
-
+        //arrayAnimals[counter] = animal;
+        //counter++;
     }
     
-    public void removeAnimal()
+    public void removeAnimal(Animals animal)
     {
-
+        
+        //counter--;
     }
     
-    public void feedAnimal()
+    public void feedAnimal(Animals animal)
     {
-    
+        animal.eat();
     }
     
     public boolean isCleanable()
     {
-        //if(){
-        
-        //}
-        //else
-        //{
-        //    System.out.println("L'enclos n'est pas vide");
-        //}
-        return false;
+        if(this.arrayAnimals.equals(0) && this.cleanliness > 1){
+            this.cleanliness = 1;
+            return true;
+        }
+        else
+        {
+            System.out.println("L'enclos ne peut pas être nettoyé");
+            return false;
+        }
     }
 
     public String toString() {
-	return "";
+	return "("+")";
     }
         
     //getter des attribut de la classe
@@ -77,6 +84,10 @@ public class Enclosures {
         return cleanliness;
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
     //setter des attribut de la classe
     public void setName(String name) {
         this.name = name;
@@ -84,10 +95,6 @@ public class Enclosures {
 
     public void setArea(double area) {
         this.area = area;
-    }
-
-    public void setMaxAnimals(int maxAnimals) {
-        this.maxAnimals = maxAnimals;
     }
 
     public void setNbrAnimals(int nbrAnimals) {
@@ -101,4 +108,9 @@ public class Enclosures {
     public void setCleanliness(int cleanliness) {
         this.cleanliness = cleanliness;
     }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+    
 }
