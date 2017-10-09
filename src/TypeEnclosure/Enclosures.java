@@ -71,6 +71,8 @@ public class Enclosures {
     public String toString() {
 	return "("+")";
     }
+    
+    public void test(){}
         
     //getter des attribut de la classe
     public String getName() {
