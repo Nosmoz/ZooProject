@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public class Eagle extends Animals implements IFlyingAnimals, IOviparous {
 
-    public Eagle(String name, int sexe, double weight, double size, int age,
+    public Eagle(String name, String sexe, double weight, double size, int age,
                  double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);

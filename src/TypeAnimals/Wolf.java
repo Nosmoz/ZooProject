@@ -3,7 +3,7 @@ package TypeAnimals;
 
 public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
 
-    public Wolf(String name, int sexe, double weight, double size, int age,
+    public Wolf(String name, String sexe, double weight, double size, int age,
                 double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);

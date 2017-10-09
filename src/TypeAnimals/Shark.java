@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public class Shark extends Animals implements ISeaAnimals, IOviparous{
 
-    public Shark(String name, int sexe, double weight, double size, int age,
+    public Shark(String name, String sexe, double weight, double size, int age,
                  double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);

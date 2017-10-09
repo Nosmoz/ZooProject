@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public class Whale extends Animals implements ISeaAnimals, IMammal {
 
-    public Whale(String name, int sexe, double weight, double size, int age,
+    public Whale(String name, String sexe, double weight, double size, int age,
                  double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);

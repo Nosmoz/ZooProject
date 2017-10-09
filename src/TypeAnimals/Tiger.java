@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public class Tiger extends Animals implements ITerrestrialsAnimals, IMammal {
 
-    public Tiger(String name, int sexe, double weight, double size, int age,
+    public Tiger(String name, String sexe, double weight, double size, int age,
                  double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);

@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public abstract class Animals {
     protected String name;
-    protected int sexe;
+    protected String sexe;
     protected double weight;
     protected double size;
     protected int age;
@@ -10,7 +10,7 @@ public abstract class Animals {
     protected boolean sleep;
     protected boolean sick ;
 
-    public Animals(String name, int sexe, double weight, double size, int age,
+    public Animals(String name, String sexe, double weight, double size, int age,
                    double hungry, boolean sick, boolean sleep)
     {
         this.name = name;
@@ -76,11 +76,11 @@ public abstract class Animals {
         this.name = name;
     }
 
-    public int getSexe() {
+    public String getSexe() {
         return sexe;
     }
 
-    public void setSexe(Character sexe) {
+    public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 

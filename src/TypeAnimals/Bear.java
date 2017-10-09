@@ -2,7 +2,7 @@ package TypeAnimals;
 
 public class Bear extends Animals implements ITerrestrialsAnimals, IMammal {
 
-    public Bear(String name, int sexe, double weight, double size, int age, double hungry, boolean sick, boolean sleep) {
+    public Bear(String name, String sexe, double weight, double size, int age, double hungry, boolean sick, boolean sleep) {
         super(name, sexe, weight, size, age, hungry, sick, sleep);
     }
 

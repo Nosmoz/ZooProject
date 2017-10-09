@@ -3,7 +3,7 @@ package TypeAnimals;
 public class RedFish extends Animals implements ISeaAnimals, IOviparous{
 
 
-    public RedFish(String name, int sexe, double weight, double size, int age,
+    public RedFish(String name, String sexe, double weight, double size, int age,
                    double hungry, boolean sick, boolean sleep)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);
