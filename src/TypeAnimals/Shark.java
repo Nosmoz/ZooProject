@@ -1,10 +1,9 @@
 package TypeAnimals;
 
+public class Shark extends SeaAnimals{
 
-public class Wolf extends TerrestrialsAnimals {
-
-    public Wolf(String name, int sexe, double weight, double size, int age, double hungry,
-                   boolean mammal, boolean sick, boolean sleep, boolean gestation)
+    public Shark(String name, int sexe, double weight, double size, int age, double hungry,
+                boolean mammal, boolean sick, boolean sleep, boolean gestation)
     {
         this.name = name;
         this.sexe = sexe;
@@ -18,7 +17,7 @@ public class Wolf extends TerrestrialsAnimals {
         this.gestation = gestation;
     }
 
-    public Wolf() { }
+    public Shark() { }
 
     public void sound()
     {

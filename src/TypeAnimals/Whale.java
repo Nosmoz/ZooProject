@@ -1,10 +1,9 @@
 package TypeAnimals;
 
+public class Whale extends SeaAnimals {
 
-public class Wolf extends TerrestrialsAnimals {
-
-    public Wolf(String name, int sexe, double weight, double size, int age, double hungry,
-                   boolean mammal, boolean sick, boolean sleep, boolean gestation)
+    public Whale(String name, int sexe, double weight, double size, int age, double hungry,
+                boolean mammal, boolean sick, boolean sleep, boolean gestation)
     {
         this.name = name;
         this.sexe = sexe;
@@ -18,10 +17,10 @@ public class Wolf extends TerrestrialsAnimals {
         this.gestation = gestation;
     }
 
-    public Wolf() { }
+    public Whale() { }
 
     public void sound()
     {
-        System.out.println("Wahouuu");
+        System.out.println("ça fait un son beaucoups trop étrange");
     }
 }

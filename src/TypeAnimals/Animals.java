@@ -31,7 +31,7 @@ public abstract class Animals {
     {
     }
 
-    protected void eat()
+    public void eat()
     {
         if (hungry > 0.5 || sleep == true)
         {
@@ -51,7 +51,7 @@ public abstract class Animals {
 
     abstract void sound();
 
-    protected void cure()
+    public void cure()
     {
         if (sick == true)
         {
@@ -60,7 +60,7 @@ public abstract class Animals {
         }
     }
 
-    protected void stase()
+    public void stase()
     {
         if (sleep == false)
         {
