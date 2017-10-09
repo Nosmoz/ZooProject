@@ -1,7 +1,7 @@
 package TypeEnclosure;
 
 import TypeAnimals.Animals;
-
+import java.util.ArrayList;
 
 public class Enclosures {
     
@@ -11,41 +11,54 @@ public class Enclosures {
     private int nbrAnimals;
     private Animals animal;
     private int cleanliness;
-    private Animals[] arrayAnimals;
-    private int counter;
+    private ArrayList<Animals> listAnimals;
+    private String type;
     
-    public Enclosures(String name, double area, int maxAnimals) {
+    public Enclosures(String name, double area, int maxAnimals, String type) {
         
         this.name = name;
         this.area = area;
         this.maxAnimals = maxAnimals;
         this.nbrAnimals = 0;
         this.cleanliness = 1;
-	this.arrayAnimals = new Animals[maxAnimals];
-        //this.counter = 0;
+        this.listAnimals = new ArrayList();
+        this.type = type;
     }
     
     public void addAnimal(Animals animal)
     {
-        //arrayAnimals[counter] = animal;
-        //counter++;
+        if(this.type == animal.getName()){
+        
+            this.listAnimals.add(animal);
+            this.nbrAnimals++;
+        }
+        else
+        {
+            System.out.println("Cette enclos ne reçois pas ce type d'animal"); 
+        }
     }
     
     public void removeAnimal(Animals animal)
     {
-        
-        //counter--;
+        if(this.listAnimals.contains(animal)){
+            this.listAnimals.remove(animal);
+            this.nbrAnimals--;
+        } 
+        else{
+            System.out.println("Cette animal n'est pas dans cette enclos");        
+        }
     }
     
-    public void feedAnimal(Animals animal)
+    public void feedAnimal()
     {
-        animal.eat();
+        for(Animals animal: this.listAnimals){
+            animal.eat();
+        }
     }
     
     public boolean isCleanable()
     {
-        if(this.arrayAnimals.equals(0) && this.cleanliness > 1){
-            this.cleanliness = 1;
+        if(this.listAnimals.isEmpty() && this.cleanliness > 1){
             return true;
         }
         else
@@ -84,8 +97,8 @@ public class Enclosures {
         return cleanliness;
     }
 
-    public int getCounter() {
-        return counter;
+    public String getType() {
+        return type;
     }
 
     //setter des attribut de la classe
@@ -109,8 +122,9 @@ public class Enclosures {
         this.cleanliness = cleanliness;
     }
 
-    public void setCounter(int counter) {
-        this.counter = counter;
+    public void setType(String type) {
+        this.type = type;
     }
+ 
     
 }
