@@ -1,20 +1,12 @@
 package TypeAnimals;
 
-public class RedFish extends SeaAnimals{
+public class RedFish extends Animals implements ISeaAnimals, IOviparous{
 
-    public RedFish(String name, int sexe, double weight, double size, int age, double hungry,
-                boolean mammal, boolean sick, boolean sleep, boolean gestation)
+
+    public RedFish(String name, int sexe, double weight, double size, int age,
+                   double hungry, boolean sick, boolean sleep)
     {
-        this.name = name;
-        this.sexe = sexe;
-        this.weight = weight;
-        this.size = size;
-        this.age = age;
-        this.hungry = hungry;
-        this.mammal = mammal;
-        this.sick = sick;
-        this.sleep = sleep;
-        this.gestation = gestation;
+        super(name, sexe, weight, size, age, hungry, sick, sleep);
     }
 
     public RedFish() { }
@@ -22,5 +14,12 @@ public class RedFish extends SeaAnimals{
     public void sound()
     {
         System.out.println("Bloubloublou");
+    }
+
+    public void move() { System.out.println("Swimming !");}
+
+    @Override
+    public IOviparous layAnEgg() {
+        return null;
     }
 }

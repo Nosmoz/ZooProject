@@ -1,26 +1,22 @@
 package TypeAnimals;
 
-public class Whale extends SeaAnimals {
+public class Whale extends Animals implements ISeaAnimals, IMammal {
 
-    public Whale(String name, int sexe, double weight, double size, int age, double hungry,
-                boolean mammal, boolean sick, boolean sleep, boolean gestation)
+    public Whale(String name, int sexe, double weight, double size, int age,
+                 double hungry, boolean sick, boolean sleep)
     {
-        this.name = name;
-        this.sexe = sexe;
-        this.weight = weight;
-        this.size = size;
-        this.age = age;
-        this.hungry = hungry;
-        this.mammal = mammal;
-        this.sick = sick;
-        this.sleep = sleep;
-        this.gestation = gestation;
+        super(name, sexe, weight, size, age, hungry, sick, sleep);
     }
-
-    public Whale() { }
 
     public void sound()
     {
         System.out.println("ça fait un son beaucoups trop étrange");
+    }
+
+    public void move() { System.out.println("Swimming"); }
+
+    @Override
+    public IMammal giveBirth() {
+        return null;
     }
 }

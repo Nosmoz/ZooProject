@@ -1,27 +1,23 @@
 package TypeAnimals;
 
 
-public class Wolf extends TerrestrialsAnimals {
+public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
 
-    public Wolf(String name, int sexe, double weight, double size, int age, double hungry,
-                   boolean mammal, boolean sick, boolean sleep, boolean gestation)
+    public Wolf(String name, int sexe, double weight, double size, int age,
+                double hungry, boolean sick, boolean sleep)
     {
-        this.name = name;
-        this.sexe = sexe;
-        this.weight = weight;
-        this.size = size;
-        this.age = age;
-        this.hungry = hungry;
-        this.mammal = mammal;
-        this.sick = sick;
-        this.sleep = sleep;
-        this.gestation = gestation;
+        super(name, sexe, weight, size, age, hungry, sick, sleep);
     }
-
-    public Wolf() { }
 
     public void sound()
     {
         System.out.println("Wahouuu");
+    }
+
+    public void move() { System.out.println("Running");}
+
+    @Override
+    public IMammal giveBirth() {
+        return null;
     }
 }

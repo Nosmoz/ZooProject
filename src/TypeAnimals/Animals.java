@@ -1,19 +1,17 @@
 package TypeAnimals;
 
 public abstract class Animals {
-    protected String name ="";
-    protected int sexe = 0;
-    protected double weight = 0.0;
-    protected double size = 0.0;
-    protected int age = 0;
-    protected double hungry = 0.0;
-    protected boolean mammal = false;
-    protected boolean sleep = false;
-    protected boolean sick = false;
-    protected boolean gestation = false;
+    protected String name;
+    protected int sexe;
+    protected double weight;
+    protected double size;
+    protected int age;
+    protected double hungry;
+    protected boolean sleep;
+    protected boolean sick ;
 
-    public Animals(String name, int sexe, double weight, double size, int age, double hungry,
-                   boolean mammal, boolean sick, boolean sleep, boolean gestation)
+    public Animals(String name, int sexe, double weight, double size, int age,
+                   double hungry, boolean sick, boolean sleep)
     {
         this.name = name;
         this.sexe = sexe;
@@ -21,10 +19,8 @@ public abstract class Animals {
         this.size = size;
         this.age = age;
         this.hungry = hungry;
-        this.mammal = mammal;
         this.sick = sick;
         this.sleep = sleep;
-        this.gestation = gestation;
     }
 
     public Animals()
@@ -40,11 +36,7 @@ public abstract class Animals {
         else if (hungry <= 0.5 && sleep == false)
         {
             System.out.println("He can eat");
-            if (gestation == true)
-            {
-                hungry = hungry + 0.3;
-            }
-            else { hungry = hungry + 0.5 ; }
+            hungry += 0.5;
         }
     }
 
@@ -75,22 +67,6 @@ public abstract class Animals {
 
     abstract void move();
 
-    public void birth()
-    {
-        if(mammal == true && sexe == 2)
-        {
-            System.out.println(" Naissance de type normal");
-        }
-        else if (sexe == 2)
-        {
-            System.out.println("Naissance par oeufs");
-        }
-        else
-        {
-            System.out.println("Impossible car mâle");
-        }
-
-    }
 
     public String getName() {
         return name;
@@ -140,14 +116,6 @@ public abstract class Animals {
         this.hungry = hungry;
     }
 
-    public boolean isMammal() {
-        return mammal;
-    }
-
-    public void setMammal(boolean mammal) {
-        this.mammal = mammal;
-    }
-
     public boolean isSleep() {
         return sleep;
     }
@@ -164,14 +132,6 @@ public abstract class Animals {
         this.sick = sick;
     }
 
-    public boolean isGestation() {
-        return gestation;
-    }
-
-    public void setGestation(boolean gestation) {
-        this.gestation = gestation;
-    }
-
         @Override
         public String toString() {
             return "Animals{" +
@@ -181,10 +141,8 @@ public abstract class Animals {
                     ", size=" + size +
                     ", age=" + age +
                     ", hungry=" + hungry +
-                    ", mammal=" + mammal +
                     ", sleep=" + sleep +
                     ", sick=" + sick +
-                    ", gestation=" + gestation +
                     '}';
         }
     }
