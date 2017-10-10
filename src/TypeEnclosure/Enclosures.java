@@ -23,6 +23,7 @@ public class Enclosures {
         this.cleanliness = 1;
         this.listAnimals = new ArrayList();
         this.type = type;
+        
     }
     
     public void addAnimal(Animals animal)
@@ -34,7 +35,7 @@ public class Enclosures {
         }
         else
         {
-            System.out.println("Cette enclos ne reçois pas ce type d'animal"); 
+            System.out.println("This enclosure of " + this.type + "s can't be contain by a " + animal.getName()); 
         }
     }
     
@@ -45,7 +46,7 @@ public class Enclosures {
             this.nbrAnimals--;
         } 
         else{
-            System.out.println("Cette animal n'est pas dans cette enclos");        
+            System.out.println("This animal is not in this enclosure");        
         }
     }
     
@@ -63,17 +64,17 @@ public class Enclosures {
         }
         else
         {
-            System.out.println("L'enclos ne peut pas être nettoyé");
+            System.out.println("The enclosure can't be cleaned");
             return false;
         }
     }
-
-    public String toString() {
-	return "("+")";
-    }
     
-    public void test(){}
-        
+    //public Object cleanEnclosure(Animals animal)
+    //{
+    //    Enclosures clean = new Enclosures("bearEnclosure1", 50, 10,"Bear");
+    //    return clean;
+    //}
+    
     //getter des attribut de la classe
     public String getName() {
         return name;
