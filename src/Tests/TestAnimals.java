@@ -24,7 +24,9 @@ public class TestAnimals {
         Enclosures bearEnclosure1 = new Enclosures("bearEnclosure1", 50, 10,"Bear");
         bearEnclosure1.addAnimal(Winnie);
         bearEnclosure1.addAnimal(John);
-        bearEnclosure1.addAnimal(Fly);
+        //bearEnclosure1.addAnimal(Fly);
+        //System.out.println(bearEnclosure1.toString());
+        System.out.println(bearEnclosure1.animalProperties());
         
     }
 
