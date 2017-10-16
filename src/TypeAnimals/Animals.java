@@ -1,16 +1,33 @@
 package TypeAnimals;
 
+/**
+ * This class modelize the abstract class Animals
+ * @author Romain Goffi
+ */
 public abstract class Animals {
+
     protected String name;
-    protected String sexe;
+    protected SexualType sexe;
     protected double weight;
     protected double size;
     protected int age;
+    protected int timerGestation;
     protected double hungry;
     protected boolean sleep;
     protected boolean sick ;
 
-    public Animals(String name, String sexe, double weight, double size, int age,
+    /**
+     * Constructor for the class Animals
+     * @param name
+     * @param sexe
+     * @param weight
+     * @param size
+     * @param age
+     * @param hungry
+     * @param sick
+     * @param sleep
+     */
+    public Animals(String name, SexualType sexe, double weight, double size, int age,
                    double hungry, boolean sick, boolean sleep)
     {
         this.name = name;
@@ -23,10 +40,14 @@ public abstract class Animals {
         this.sleep = sleep;
     }
 
-    public Animals()
-    {
-    }
+    /**
+     * Default Animals Constructor
+     */
+    public Animals() { }
 
+    /**
+     * Method to know if animal can eat
+     */
     public void eat()
     {
         if (hungry > 0.5 || sleep == true)
@@ -40,9 +61,14 @@ public abstract class Animals {
         }
     }
 
-
+    /**
+     * Abstract method where animal generate sounds
+     */
     abstract void sound();
 
+    /**
+     * Method to cure animal
+     */
     public void cure()
     {
         if (sick == true)
@@ -52,7 +78,10 @@ public abstract class Animals {
         }
     }
 
-    public void stase()
+    /**
+     * Method to know the state
+     */
+    public void state()
     {
         if (sleep == false)
         {
@@ -65,9 +94,16 @@ public abstract class Animals {
         }
     }
 
+    /**
+     * Abstract method where animals move
+     */
+
     abstract void move();
 
 
+    /**
+     * All of getters and setters for the class Animals
+     */
     public String getName() {
         return name;
     }
@@ -76,13 +112,11 @@ public abstract class Animals {
         this.name = name;
     }
 
-    public String getSexe() {
+    public SexualType getSexe() {
         return sexe;
     }
 
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
+    public void setSexe(SexualType sexe) { this.sexe = sexe; }
 
     public double getWeight() {
         return weight;
@@ -92,9 +126,7 @@ public abstract class Animals {
         this.weight = weight;
     }
 
-    public double getSize() {
-        return size;
-    }
+    public double getSize() { return size; }
 
     public void setSize(double size) {
         this.size = size;
@@ -132,6 +164,10 @@ public abstract class Animals {
         this.sick = sick;
     }
 
+    /**
+     *
+     * @return all animals elements on string type
+     */
         @Override
         public String toString() {
             return "Animals{" +
