@@ -5,6 +5,8 @@
  */
 package TypeEnclosure;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Anthony
@@ -13,9 +15,51 @@ public class Aquarium extends Enclosures{
     
     private double depth;
     private int salinity;
+    private int depthCleanliness;
     
-    public Aquarium(String name, double area, int maxAnimals, String type) {
+    public Aquarium(String name, double area, int maxAnimals, String type, double depth) {
         super(name, area, maxAnimals, type);
+        this.depth = depth;
+        this.nbrAnimals = 0;
+        this.cleanliness = 1;
+        this.salinity = 1;
+        this.depthCleanliness = 1;
+        this.listAnimals = new ArrayList();
     }
     
+    /**
+     * Method to know if the enclosure is cleanable
+     */
+    public boolean isCleanable()
+    {
+        if(this.cleanliness > 1 & this.salinity > 1 & this.depthCleanliness > 1){
+            if(this.listAnimals.isEmpty()){
+                return true;
+            }
+            else{
+                System.out.println("The enclosure is not empty");
+                return false;
+            }    
+        }
+        else
+        {
+            System.out.println("The enclosure is not dirty");
+            return false;
+        }
+    }
+
+    /**
+     * All of getters and setters for the class Enclosures
+     */
+    public double getDepth() {
+        return depth;
+    }
+
+    public int getSalinity() {
+        return salinity;
+    }
+
+    public int getDepthCleanliness() {
+        return depthCleanliness;
+    }
 }

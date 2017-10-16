@@ -3,18 +3,33 @@ package TypeEnclosure;
 import TypeAnimals.Animals;
 import java.util.ArrayList;
 
+/**
+ * This class modelize the class Enclosures
+ * @author Anthony Cargnino
+ */
 public class Enclosures {
     
-    private String name;
-    private double area;
-    private final int maxAnimals;
-    private int nbrAnimals;
-    private Animals animal;
-    private int cleanliness;
-    private ArrayList<Animals> listAnimals;
-    private String type;
-    private String properties = "";
+    protected String name;
+    protected double area;
+    protected final int maxAnimals;
+    protected int nbrAnimals;
+    protected Animals animal;
+    protected int cleanliness;
+    protected ArrayList<Animals> listAnimals;
+    protected String type;
+    protected String properties = "";
     
+    /**
+     * Constructor for the class Enclosures
+     * @param name
+     * @param area
+     * @param maxAnimals
+     * @param nbrAnimals
+     * @param animal
+     * @param cleanliness
+     * @param listAnimals
+     * @param type
+     */
     public Enclosures(String name, double area, int maxAnimals, String type) {
         
         this.name = name;
@@ -27,6 +42,9 @@ public class Enclosures {
         
     }
     
+    /**
+     * Method to add an animal in the enclosure
+     */
     public void addAnimal(Animals animal)
     {
         if(this.type == animal.getName()){
@@ -44,6 +62,9 @@ public class Enclosures {
         }
     }
     
+    /**
+     * Method to remove an animal in the enclosure
+     */
     public void removeAnimal(Animals animal)
     {
         if(this.listAnimals.contains(animal)){
@@ -55,6 +76,9 @@ public class Enclosures {
         }
     }
     
+    /**
+     * Method to feed all animals in the enclosure
+     */
     public void feedAnimal()
     {
         for(Animals animal: this.listAnimals){
@@ -62,6 +86,9 @@ public class Enclosures {
         }
     }
     
+    /**
+     * Method to show every properties of all animals in the enclosure
+     */
     public String animalProperties()
     {
         
@@ -72,6 +99,9 @@ public class Enclosures {
         return properties;
     }
     
+    /**
+     * Method to know if the enclosure is cleanable
+     */
     public boolean isCleanable()
     {
         if(this.cleanliness > 1){
@@ -90,13 +120,9 @@ public class Enclosures {
         }
     }
     
-    //public Object cleanEnclosure(Animals animal)
-    //{
-    //    Enclosures clean = new Enclosures("bearEnclosure1", 50, 10,"Bear");
-    //    return clean;
-    //}
-    
-    //getter des attribut de la classe
+    /**
+     * All of getters and setters for the class Enclosures
+     */
     public String getName() {
         return name;
     }
@@ -125,7 +151,6 @@ public class Enclosures {
         return type;
     }
 
-    //setter des attribut de la classe
     public void setName(String name) {
         this.name = name;
     }
@@ -150,6 +175,10 @@ public class Enclosures {
         this.type = type;
     }
  
+    /**
+     *
+     * @return all enclosures elements on string type
+     */
     @Override
     public String toString() {
             return "Enclosure{" +
