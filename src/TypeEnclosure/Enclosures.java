@@ -13,6 +13,7 @@ public class Enclosures {
     private int cleanliness;
     private ArrayList<Animals> listAnimals;
     private String type;
+    private String properties = "";
     
     public Enclosures(String name, double area, int maxAnimals, String type) {
         
@@ -29,13 +30,17 @@ public class Enclosures {
     public void addAnimal(Animals animal)
     {
         if(this.type == animal.getName()){
-        
-            this.listAnimals.add(animal);
-            this.nbrAnimals++;
+            if(this.listAnimals.size() <= this.maxAnimals){
+                this.listAnimals.add(animal);
+                this.nbrAnimals++;
+            }
+            else{
+                System.out.println("This enclosure is full");
+            }
         }
         else
         {
-            System.out.println("This enclosure of " + this.type + "s can't be contain by a " + animal.getName()); 
+            System.out.println("This enclosure of " + this.type + "s can't contain a " + animal.getName()); 
         }
     }
     
@@ -57,14 +62,30 @@ public class Enclosures {
         }
     }
     
+    public String animalProperties()
+    {
+        
+        for(Animals animal: this.listAnimals){
+            
+            properties = properties + animal.toString();
+        }
+        return properties;
+    }
+    
     public boolean isCleanable()
     {
-        if(this.listAnimals.isEmpty() && this.cleanliness > 1){
-            return true;
+        if(this.cleanliness > 1){
+            if(this.listAnimals.isEmpty()){
+                return true;
+            }
+            else{
+                System.out.println("The enclosure is not empty");
+                return false;
+            }    
         }
         else
         {
-            System.out.println("The enclosure can't be cleaned");
+            System.out.println("The enclosure is not dirty");
             return false;
         }
     }
@@ -129,5 +150,15 @@ public class Enclosures {
         this.type = type;
     }
  
-    
+    @Override
+    public String toString() {
+            return "Enclosure{" +
+                    "name='" + this.name + '\'' +
+                    ", area=" + this.area +
+                    ", maximum contents=" + this.maxAnimals +
+                    ", type=" + this.type +
+                    ", level of cleanliness=" + this.cleanliness + 
+                    ", number=" + this.nbrAnimals +
+                    '}';
+        }
 }
