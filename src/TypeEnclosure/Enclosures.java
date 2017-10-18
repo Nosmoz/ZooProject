@@ -151,6 +151,11 @@ public class Enclosures {
         return type;
     }
 
+    public ArrayList<Animals> getListAnimals() {
+        return listAnimals;
+    }
+    
+
     public void setName(String name) {
         this.name = name;
     }

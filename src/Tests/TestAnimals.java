@@ -1,6 +1,8 @@
 package Tests;
 
 
+import ProjetZoo.Employer;
+import ProjetZoo.Zoo;
 import TypeAnimals.Animals;
 import TypeAnimals.Tiger;
 import TypeAnimals.Wolf;
@@ -16,6 +18,9 @@ public class TestAnimals {
 
     public static void main(String[] args)
     {
+        Employer Joe = new Employer("Joe", SexualType.Male, 19);
+        Zoo Animali = new Zoo("Animali", Joe, 30);
+        
         Bear John = new Bear("Bear", SexualType.Female, 10, 140, 2, 1, true,false);
         John.toString();
         John.sound();
