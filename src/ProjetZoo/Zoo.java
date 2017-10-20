@@ -80,8 +80,9 @@ public class Zoo {
     
     public void randomStateEnclosure()
     {
-        //int tableauIndex = (int) (Math.random() * (this.nbrEnclosure - 1));
-        //this.listEnclosure.get(tableauIndex).setCleanliness(1);
+        int tableauIndex = (int) (Math.random() * (this.nbrEnclosure - 1));
+        
+        this.listEnclosure.get(tableauIndex).dirty();
     }
     
 }

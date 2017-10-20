@@ -5,6 +5,8 @@
  */
 package TypeEnclosure;
 
+import TypeAnimals.Animals;
+import TypeAnimals.IFlyingAnimals;
 import java.util.ArrayList;
 
 
@@ -12,29 +14,23 @@ import java.util.ArrayList;
  * This class modelize the class Enclosures
  * @author Anthony Cargnino
  */
-public class Aviary extends Enclosures {
+public class Aviary<T extends Animals & IFlyingAnimals> extends Enclosures<T> {
     
     private double height;
     private int roofCleanliness;
     
         /**
-     * Constructor for the class Enclosures
-     * @param name
-     * @param area
-     * @param maxAnimals
-     * @param nbrAnimals
-     * @param animal
-     * @param cleanliness
-     * @param listAnimals
-     * @param type
+     * Constructor for the class Aviary
      * @param height
      * @param roofCleanliness
      */
-    public Aviary(String name, double area, int maxAnimals, String type) {
+    public Aviary(String name, double area, int maxAnimals, String type, double height) {
         super(name, area, maxAnimals, type);
         this.nbrAnimals = 0;
         this.cleanliness = 1;
         this.listAnimals = new ArrayList();
+        this.height = height;
+        this.roofCleanliness = 1;
     }
     
     /**

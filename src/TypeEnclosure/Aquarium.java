@@ -5,13 +5,16 @@
  */
 package TypeEnclosure;
 
+import TypeAnimals.Animals;
+import TypeAnimals.IFlyingAnimals;
+import TypeAnimals.ISeaAnimals;
 import java.util.ArrayList;
 
 /**
  *
  * @author Anthony
  */
-public class Aquarium extends Enclosures{
+public class Aquarium<T extends Animals & ISeaAnimals> extends Enclosures<T>{
     
     private double depth;
     private int salinity;

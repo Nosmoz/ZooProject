@@ -7,15 +7,15 @@ import java.util.ArrayList;
  * This class modelize the class Enclosures
  * @author Anthony Cargnino
  */
-public class Enclosures {
+public class Enclosures<T extends Animals> {
     
     protected String name;
     protected double area;
     protected final int maxAnimals;
     protected int nbrAnimals;
-    protected Animals animal;
+    //protected Animals animal;
     protected int cleanliness;
-    protected ArrayList<Animals> listAnimals;
+    protected ArrayList<T> listAnimals;
     protected String type;
     protected String properties = "";
     
@@ -45,27 +45,23 @@ public class Enclosures {
     /**
      * Method to add an animal in the enclosure
      */
-    public void addAnimal(Animals animal)
+    public void addAnimal(T animal)
     {
-        if(this.type == animal.getName()){
-            if(this.listAnimals.size() <= this.maxAnimals){
+
+        if(this.listAnimals.size() <= this.maxAnimals){
                 this.listAnimals.add(animal);
                 this.nbrAnimals++;
             }
-            else{
+        else{
                 System.out.println("This enclosure is full");
             }
-        }
-        else
-        {
-            System.out.println("This enclosure of " + this.type + "s can't contain a " + animal.getName()); 
-        }
     }
+    
     
     /**
      * Method to remove an animal in the enclosure
      */
-    public void removeAnimal(Animals animal)
+    public void removeAnimal(T animal)
     {
         if(this.listAnimals.contains(animal)){
             this.listAnimals.remove(animal);
@@ -120,6 +116,17 @@ public class Enclosures {
         }
     }
     
+    public void dirty()
+    {
+        if(this.cleanliness < 3)
+        {
+            this.cleanliness = this.cleanliness + 1;
+        }
+        else{
+            System.out.println("This enclosure is very dirty");
+        }
+    }
+    
     /**
      * All of getters and setters for the class Enclosures
      */
@@ -139,9 +146,9 @@ public class Enclosures {
         return nbrAnimals;
     }
 
-    public Animals getAnimal() {
+    /*public Animals getAnimal() {
         return animal;
-    }
+    }*/
 
     public int getCleanliness() {
         return cleanliness;
@@ -151,7 +158,7 @@ public class Enclosures {
         return type;
     }
 
-    public ArrayList<Animals> getListAnimals() {
+    public ArrayList<T> getListAnimals() {
         return listAnimals;
     }
     
@@ -168,9 +175,9 @@ public class Enclosures {
         this.nbrAnimals = nbrAnimals;
     }
 
-    public void setAnimal(Animals animal) {
+    /*public void setAnimal(Animals animal) {
         this.animal = animal;
-    }
+    }*/
 
     public void setCleanliness(int cleanliness) {
         this.cleanliness = cleanliness;
