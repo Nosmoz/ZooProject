@@ -1,4 +1,4 @@
-package TypeAnimals;
+package TypeAnimals.Others;
 
 /**
  * This enum modelize the enum for the sexe

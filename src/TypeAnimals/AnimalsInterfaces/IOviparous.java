@@ -1,4 +1,4 @@
-package TypeAnimals;
+package TypeAnimals.AnimalsInterfaces;
 
 /**
  * This interface modelize the interface for Oviparous Animals
@@ -7,7 +7,6 @@ package TypeAnimals;
 public interface IOviparous
 {
     /**
-     *
      * Abstract method for Animals birth
      */
     public abstract IOviparous layAnEgg();

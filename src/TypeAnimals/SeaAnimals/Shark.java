@@ -1,10 +1,15 @@
-package TypeAnimals;
+package TypeAnimals.SeaAnimals;
+
+import TypeAnimals.Animals;
+import TypeAnimals.AnimalsInterfaces.IOviparous;
+import TypeAnimals.AnimalsInterfaces.ISeaAnimals;
+import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Shark
  * @author Romain Goffi
  */
-public class Shark extends Animals implements ISeaAnimals, IOviparous{
+public class Shark extends Animals implements ISeaAnimals, IOviparous {
 
     /**
      * Constructor for the class Animals

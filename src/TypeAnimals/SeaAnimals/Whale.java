@@ -1,4 +1,9 @@
-package TypeAnimals;
+package TypeAnimals.SeaAnimals;
+
+import TypeAnimals.Animals;
+import TypeAnimals.AnimalsInterfaces.IMammal;
+import TypeAnimals.AnimalsInterfaces.ISeaAnimals;
+import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Whale

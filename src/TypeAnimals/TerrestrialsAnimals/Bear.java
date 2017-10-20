@@ -1,4 +1,9 @@
-package TypeAnimals;
+package TypeAnimals.TerrestrialsAnimals;
+
+import TypeAnimals.Animals;
+import TypeAnimals.AnimalsInterfaces.IMammal;
+import TypeAnimals.AnimalsInterfaces.ITerrestrialsAnimals;
+import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Bear

@@ -1,4 +1,9 @@
-package TypeAnimals;
+package TypeAnimals.FlyingAnimals;
+
+import TypeAnimals.Animals;
+import TypeAnimals.AnimalsInterfaces.IFlyingAnimals;
+import TypeAnimals.AnimalsInterfaces.IOviparous;
+import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Eagle

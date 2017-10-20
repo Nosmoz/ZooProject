@@ -1,16 +1,11 @@
 package Tests;
 
 
-import ProjetZoo.Employer;
-import ProjetZoo.Zoo;
-import TypeAnimals.Animals;
-import TypeAnimals.Tiger;
-import TypeAnimals.Wolf;
-import TypeAnimals.Bear;
-import TypeAnimals.Eagle;
+import TypeAnimals.TerrestrialsAnimals.Bear;
+import TypeAnimals.FlyingAnimals.Eagle;
 import TypeEnclosure.Enclosures;
-import TypeAnimals.SexualType;
-import TypeAnimals.Whale;
+import TypeAnimals.Others.SexualType;
+import TypeAnimals.SeaAnimals.Whale;
 import TypeEnclosure.Aquarium;
 import TypeEnclosure.Aviary;
 

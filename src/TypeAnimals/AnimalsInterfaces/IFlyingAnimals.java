@@ -1,4 +1,4 @@
-package TypeAnimals;
+package TypeAnimals.AnimalsInterfaces;
 
 /**
  * This interface modelize the interface for Flying Animals

@@ -1,4 +1,10 @@
-package TypeAnimals;
+package TypeAnimals.FlyingAnimals;
+
+import TypeAnimals.Animals;
+import TypeAnimals.AnimalsInterfaces.IOviparous;
+import TypeAnimals.AnimalsInterfaces.ISeaAnimals;
+import TypeAnimals.AnimalsInterfaces.ITerrestrialsAnimals;
+import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Auk
