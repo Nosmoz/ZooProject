@@ -10,5 +10,5 @@ public interface IMammal
      *
      * Abstract method for Animals birth
      */
-    public abstract IMammal giveBirth();
+    public abstract IMammal giveBirth(String name);
 }

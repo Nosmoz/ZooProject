@@ -2,12 +2,20 @@ package TypeAnimals.TerrestrialsAnimals.WolfProject;
 
 import TypeAnimals.Others.SexualType;
 
-
+/**
+ * This class modelize the class WolfCoupleAlpha
+ * @author Romain Goffi
+ */
 public class WolfCoupleAlpha {
-    private Wolf maleAlpha;
-    private Wolf femaleAlpha;
-    private int compteurChildren;
+    protected Wolf maleAlpha;
+    protected Wolf femaleAlpha;
+    protected int compteurChildren;
 
+    /**
+     * Constructor for the WolfCoupleAlpha
+     * @param usWolf1
+     * @param usWolf2
+     */
     public WolfCoupleAlpha(Wolf usWolf1, Wolf usWolf2)
     {
         if (usWolf1.getSexe() != usWolf2.getSexe() && usWolf1.getSexe() == SexualType.Male
@@ -23,6 +31,14 @@ public class WolfCoupleAlpha {
         }
     }
 
+    public Wolf reproduction(String name)
+    {
+        compteurChildren += 1;
+        return(Wolf)femaleAlpha.giveBirth(name);
+    }
+    /**
+     * All of getters and setters for the class Animals
+     */
     public Wolf getMaleAlpha() {
         return maleAlpha;
     }

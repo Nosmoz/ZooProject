@@ -13,11 +13,9 @@ public abstract class Animals {
     protected double weight;
     protected double size;
     protected int age;
-    protected int timerGestation;
     protected double hungry;
     protected boolean sleep;
     protected boolean sick ;
-    protected String sound;
 
     /**
      * Constructor for the class Animals
@@ -64,7 +62,7 @@ public abstract class Animals {
     /**
      * Method where animal generate sounds
      */
-    public void sound() { System.out.println(sound); }
+    public void sound() { }
 
     /**
      * Method to cure animal

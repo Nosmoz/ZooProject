@@ -3,13 +3,15 @@ package TypeAnimals.TerrestrialsAnimals.WolfProject;
 import TypeAnimals.*;
 import TypeAnimals.AnimalsInterfaces.IMammal;
 import TypeAnimals.AnimalsInterfaces.ITerrestrialsAnimals;
+import TypeAnimals.TerrestrialsAnimals.WolfProject.WolfHowls;
 import TypeAnimals.Others.SexualType;
 
 /**
  * This class modelize the class Wolf
  * @author Romain Goffi
  */
-public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
+public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal
+{
 
     private int strenght;
     private double factorDomination;
@@ -18,6 +20,7 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
     private int level;
     private int impetuous;
     private WolfPack hounds;
+    private WolfHowls wolfHowls;
     private boolean failFightVsAlphaMale;
     /**
      * Constructor for the class Animals with new Wolf's elements.
@@ -68,7 +71,7 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
         this.impetuous = 1;
         this.ageType = AgeType.Young;
         this.factorDomination = 0;
-        /* this.hounds =; */
+        this.hounds = null;
         this.failFightVsAlphaMale = false;
     }
 
@@ -122,16 +125,30 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
      */
     public void move() { System.out.println("Running");}
 
-
+    /**
+     * Method to generate a specific wolf howls
+     */
+    public void sound()
+    {
+        if (this.getHounds() != null)
+        {
+            wolfHowls.wolfHowls();
+        }
+        else if(this.getFactorDomination() > 0.6)
+        {
+            wolfHowls.wolfHowlsPutDomination();
+        }
+        else
+        {
+            this.toString();
+        }
+    }
     /**
      * methode to hear the Wolf's yell
      */
     public void hearYell()
     {
-        if (sleep == false && sick == false)
-        {
-            System.out.println("I can hear a yell");
-        }
+        if (this.isSleep() && this.isSick()) { System.out.println("I can hear a yell"); }
     }
 
     /**
@@ -157,16 +174,49 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
     }
 
     /**
+     * Method to add a wolf on a hounds
+     * @param wolfPack
+     */
+    public void joinHounds(WolfPack wolfPack)
+    {
+        if (this.isFailFightVsAlphaMale() || this.getRank() == RankWolf.omega || this.getHounds() != null)
+        {
+            System.out.println("The wolf can't join the hounds "+ wolfPack);
+        }
+        else
+        {
+            this.setHounds(wolfPack);
+        }
+
+    }
+
+    /**
+     * Method to separate a wolf to his hounds
+     */
+    public void separateHounds()
+    {
+        if (!this.isFailFightVsAlphaMale() || this.getRank() == RankWolf.omega || this.getHounds() != null)
+        {
+            this.setHounds(null);
+        }
+        else
+        {
+            System.out.println("This wolf can't be separate of his hounds");
+        }
+    }
+
+
+    /**
+     *
      *
      * @return new animal (Wolf)
      */
     @Override
-    public IMammal giveBirth() {
-        if (timerGestation == 70)
-        {
-            return new Wolf();
-        }
-        return null;
+    public IMammal giveBirth(String name)
+    {
+        Wolf wolf = new Wolf();
+        wolf.joinHounds(this.getHounds());
+        return wolf;
     }
 
     /**
@@ -185,13 +235,15 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal {
                 ", weight=" + weight +
                 ", size=" + size +
                 ", age=" + age +
-                ", timerGestation=" + timerGestation +
                 ", hungry=" + hungry +
                 ", sleep=" + sleep +
                 ", sick=" + sick +
                 '}';
     }
 
+    /**
+     * All of getters and setters for the class Wolf
+     */
     public int getStrenght() {
         return strenght;
     }
