@@ -1,6 +1,6 @@
 package ProjetZoo;
 
-import TypeAnimals.Others.SexualType;
+import TypeAnimals.SexualType;
 import TypeEnclosure.Enclosures;
 
 public class Employer {

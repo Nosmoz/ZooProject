@@ -6,7 +6,8 @@
 package TypeEnclosure;
 
 import TypeAnimals.Animals;
-import TypeAnimals.AnimalsInterfaces.ISeaAnimals;
+import TypeAnimals.IFlyingAnimals;
+import TypeAnimals.ISeaAnimals;
 import java.util.ArrayList;
 
 /**

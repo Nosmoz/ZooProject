@@ -1,7 +1,5 @@
 package TypeAnimals;
 
-import TypeAnimals.Others.SexualType;
-
 /**
  * This class modelize the abstract class Animals
  * @author Romain Goffi
@@ -17,7 +15,6 @@ public abstract class Animals {
     protected double hungry;
     protected boolean sleep;
     protected boolean sick ;
-    protected String sound;
 
     /**
      * Constructor for the class Animals
@@ -53,7 +50,10 @@ public abstract class Animals {
      */
     public void eat()
     {
-        if (hungry > 0.5 || sleep == true) { System.out.println("Isn't the moment for eat"); }
+        if (hungry > 0.5 || sleep == true)
+        {
+            System.out.println("Isn't the moment for eat");
+        }
         else if (hungry <= 0.5 && sleep == false)
         {
             System.out.println("He can eat");
@@ -62,9 +62,9 @@ public abstract class Animals {
     }
 
     /**
-     * Method where animal generate sounds
+     * Abstract method where animal generate sounds
      */
-    public void sound() { System.out.println(sound); }
+    abstract void sound();
 
     /**
      * Method to cure animal
@@ -88,14 +88,17 @@ public abstract class Animals {
             sleep = true;
             System.out.println("He start sleeping");
         }
-        else { sleep = false; }
+        else
+        {
+            sleep = false;
+        }
     }
 
     /**
-     * Method where animals move
+     * Abstract method where animals move
      */
 
-    public void move() {}
+    abstract void move();
 
 
     /**
