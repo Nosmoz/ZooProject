@@ -7,6 +7,7 @@ package TypeAnimals.AnimalsInterfaces;
 public interface IMammal
 {
     /**
+     *
      * Abstract method for Animals birth
      */
     public abstract IMammal giveBirth();
