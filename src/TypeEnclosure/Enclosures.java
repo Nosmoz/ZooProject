@@ -15,7 +15,7 @@ public class Enclosures<T extends Animals> {
     protected int nbrAnimals;
     //protected Animals animal;
     protected int cleanliness;
-    protected ArrayList<T> listAnimals;
+    protected ArrayList<Animals> listAnimals;
     protected String type;
     protected String properties = "";
     
@@ -24,10 +24,6 @@ public class Enclosures<T extends Animals> {
      * @param name
      * @param area
      * @param maxAnimals
-     * @param nbrAnimals
-     * @param animal
-     * @param cleanliness
-     * @param listAnimals
      * @param type
      */
     public Enclosures(String name, double area, int maxAnimals, String type) {
@@ -45,24 +41,30 @@ public class Enclosures<T extends Animals> {
     /**
      * Method to add an animal in the enclosure
      */
-    public void addAnimal(T animal)
+    public void addAnimal(Animals animal)
     {
-
-        if(this.listAnimals.size() <= this.maxAnimals){
+        if (animal.getName() != this.getType())
+        {
+            System.out.println("It's impossible to add this "+ animal.getName() + " on the enclosure for " + this.getType());
+        }
+        else
+        {
+            if(this.listAnimals.size() <= this.maxAnimals){
                 this.listAnimals.add(animal);
                 this.nbrAnimals++;
                 System.out.println(animal.getName()+ " is now in " + this.name);
             }
-        else{
+            else{
                 System.out.println("This enclosure is full");
             }
+        }
     }
     
     
     /**
      * Method to remove an animal in the enclosure
      */
-    public void removeAnimal(T animal)
+    public void removeAnimal(Animals animal)
     {
         if(this.listAnimals.contains(animal)){
             this.listAnimals.remove(animal);
@@ -163,7 +165,7 @@ public class Enclosures<T extends Animals> {
         return type;
     }
 
-    public ArrayList<T> getListAnimals() {
+    public ArrayList<Animals> getListAnimals() {
         return listAnimals;
     }
     

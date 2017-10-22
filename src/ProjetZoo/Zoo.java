@@ -40,6 +40,14 @@ public class Zoo {
             System.out.println(enclosure.animalProperties());
         }
     }
+
+    public void allEnclosure()
+    {
+        for (Enclosures enclosure: this.listEnclosure)
+        {
+            System.out.print(enclosure.getName());
+        }
+    }
     
     public void addEnclosure(Enclosures enclosure)
     {

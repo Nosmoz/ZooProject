@@ -34,18 +34,17 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal
      * @param sleep
      * @param strenght
      * @param rank
-     * @param level
      * @param impetuous
      * @param ageType
      */
     public Wolf(String name, SexualType sexe, double weight, double size, int age,
                 double hungry, boolean sick, boolean sleep, int strenght, RankWolf rank,
-                int level, int impetuous, AgeType ageType)
+                int impetuous, AgeType ageType)
     {
         super(name, sexe, weight, size, age, hungry, sick, sleep);
         this.strenght = strenght;
         this.rank = rank;
-        this.level = level;
+        this.level = calculateLevel();
         this.impetuous = impetuous;
         this.ageType = ageType;
         this.factorDomination = 0;
@@ -66,7 +65,7 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal
         this.sick = false;
         this.sleep = false;
         this.strenght = 1;
-        this.rank = RankWolf.alpha;
+        this.rank = RankWolf.zeta;
         this.level = 1;
         this.impetuous = 1;
         this.ageType = AgeType.Young;
@@ -140,7 +139,7 @@ public class Wolf extends Animals implements ITerrestrialsAnimals, IMammal
         }
         else
         {
-            this.toString();
+            System.out.println(this.toString());
         }
     }
     /**
