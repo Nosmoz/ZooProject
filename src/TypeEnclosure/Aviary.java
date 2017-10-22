@@ -40,6 +40,7 @@ public class Aviary<T extends Animals & IFlyingAnimals> extends Enclosures<T> {
     {
         if(this.cleanliness > 1 & this.roofCleanliness > 1){
             if(this.listAnimals.isEmpty()){
+                System.out.println("The enclosure is cleanable");
                 return true;
             }
             else{

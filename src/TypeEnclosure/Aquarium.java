@@ -36,6 +36,7 @@ public class Aquarium<T extends Animals & ISeaAnimals> extends Enclosures<T>{
     {
         if(this.cleanliness > 1 & this.salinity > 1 & this.depthCleanliness > 1){
             if(this.listAnimals.isEmpty()){
+                System.out.println("The enclosure is cleanable");
                 return true;
             }
             else{

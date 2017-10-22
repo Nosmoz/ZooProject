@@ -51,6 +51,7 @@ public class Enclosures<T extends Animals> {
         if(this.listAnimals.size() <= this.maxAnimals){
                 this.listAnimals.add(animal);
                 this.nbrAnimals++;
+                System.out.println(animal.getName()+ " is now in " + this.name);
             }
         else{
                 System.out.println("This enclosure is full");
@@ -66,6 +67,7 @@ public class Enclosures<T extends Animals> {
         if(this.listAnimals.contains(animal)){
             this.listAnimals.remove(animal);
             this.nbrAnimals--;
+            System.out.println(animal + "removed from the list: " + listAnimals);
         } 
         else{
             System.out.println("This animal is not in this enclosure");        
@@ -80,6 +82,7 @@ public class Enclosures<T extends Animals> {
         for(Animals animal: this.listAnimals){
             animal.eat();
         }
+        System.out.println("All the animals in this enclosure are fed");
     }
     
     /**
@@ -102,6 +105,7 @@ public class Enclosures<T extends Animals> {
     {
         if(this.cleanliness > 1){
             if(this.listAnimals.isEmpty()){
+                System.out.println("The enclosure is cleanable");
                 return true;
             }
             else{
@@ -121,6 +125,7 @@ public class Enclosures<T extends Animals> {
         if(this.cleanliness < 3)
         {
             this.cleanliness = this.cleanliness + 1;
+            System.out.println("This enclosure is clean now");
         }
         else{
             System.out.println("This enclosure is very dirty");

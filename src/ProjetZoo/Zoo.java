@@ -46,6 +46,7 @@ public class Zoo {
         if(this.listEnclosure.size() <= this.maxEnclosure){
             this.listEnclosure.add(enclosure);
             this.nbrEnclosure++;
+            System.out.println(enclosure.getName() +" is now in "+this.name);
         }
         else{
             System.out.println("The zoo is full");
@@ -59,6 +60,7 @@ public class Zoo {
             {
                 this.listEnclosure.remove(enclosure);
                 this.nbrEnclosure--;
+                System.out.println("This enclosure is remove");
             }
             else
             {
