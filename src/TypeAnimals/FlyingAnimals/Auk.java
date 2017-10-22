@@ -62,10 +62,12 @@ public class Auk extends Animals implements ITerrestrialsAnimals, IOviparous, IS
      * @return new Animal (Auk)
      */
     @Override
-    public IOviparous layAnEgg() {
-        if (timerGestation == 40 )
+    public IOviparous layAnEgg()
+    {
+        if(this.getSexe() == SexualType.Female)
         {
-            return new Auk();
+            Auk auk = new Auk();
+            return auk;
         }
         return null;
     }

@@ -61,11 +61,12 @@ public class Whale extends Animals implements ISeaAnimals, IMammal {
      * @return new animal (Whale)
      */
     @Override
-    public IMammal giveBirth()
+    public IMammal giveBirth(String name)
     {
-        if (timerGestation == 390)
+        if (this.getSexe() == SexualType.Female)
         {
-            return new Whale();
+            Whale whale = new Whale();
+            return whale;
         }
         return null;
     }

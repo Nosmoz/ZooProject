@@ -62,10 +62,12 @@ public class Tiger extends Animals implements ITerrestrialsAnimals, IMammal {
      * @return new animal (Tiger)
      */
     @Override
-    public IMammal giveBirth() {
-        if( timerGestation == 100 )
+    public IMammal giveBirth(String name)
+    {
+        if( this.getSexe() == SexualType.Female )
         {
-            return new Tiger();
+            Tiger tiger = new Tiger();
+            return tiger;
         }
         return null;
     }

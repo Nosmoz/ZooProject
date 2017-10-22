@@ -61,11 +61,12 @@ public class Bear extends Animals implements ITerrestrialsAnimals, IMammal {
      * @return new animal (Bear)
      */
     @Override
-    public IMammal giveBirth()
+    public IMammal giveBirth(String name)
     {
-        if (timerGestation == 240)
+        if (this.getSexe() == SexualType.Female)
         {
-            return new Bear();
+            Bear bear = new Bear();
+            return bear;
         }
         return null;
     }

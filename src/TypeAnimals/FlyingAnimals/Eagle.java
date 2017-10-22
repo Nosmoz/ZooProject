@@ -63,9 +63,10 @@ public class Eagle extends Animals implements IFlyingAnimals, IOviparous {
      */
     @Override
     public IOviparous layAnEgg() {
-        if (timerGestation == 42)
+        if (this.getSexe() == SexualType.Female)
         {
-            return new Eagle();
+            Eagle eagle = new Eagle();
+            return eagle;
         }
         return null;
     }

@@ -66,9 +66,10 @@ public class Shark extends Animals implements ISeaAnimals, IOviparous {
     @Override
     public IOviparous layAnEgg()
     {
-        if (timerGestation == 660)
+        if (this.getSexe() == SexualType.Female)
         {
-            return new Shark();
+            Shark shark = new Shark();
+            return shark;
         }
         return null;
     }

@@ -63,9 +63,10 @@ public class RedFish extends Animals implements ISeaAnimals, IOviparous {
     @Override
     public IOviparous layAnEgg()
     {
-        if(timerGestation == 5)
+        if(this.getSexe() == SexualType.Female)
         {
-            return new RedFish();
+            RedFish redFish = new RedFish();
+            return redFish;
         }
         return null;
     }
